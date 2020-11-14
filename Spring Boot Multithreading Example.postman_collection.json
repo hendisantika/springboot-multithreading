@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "190a606e-e35a-4980-a69e-c1ac70054f50",
+		"name": "Spring Boot Multithreading Example",
+		"description": "Spring Boot Multithreading Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload CSV Files",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/Users/hendisantika/Desktop/MOCK_DATA.csv"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/Users/hendisantika/Desktop/MOCK_DATA (1).csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Upload CSV Files"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Get All User"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users By Thread",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getUsersByThread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getUsersByThread"
+					]
+				},
+				"description": "Get Users By Thread"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

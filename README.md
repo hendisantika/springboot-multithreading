@@ -5,6 +5,7 @@
 3. Run the application: `mvn clean spring-boot:run`
 4. Open your REST API Client. I am using POSTMAN
 5. Import Postman Collection
+6. We are using [Mockaroo](https://www.mockaroo.com/) to generate Mock Data
 
 
 ### Images Screen shot
