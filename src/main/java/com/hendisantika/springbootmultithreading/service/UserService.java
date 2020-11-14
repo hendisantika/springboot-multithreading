@@ -40,4 +40,11 @@ public class UserService {
         return CompletableFuture.completedFuture(users);
     }
 
+    @Async
+    public CompletableFuture<List<User>> findAllUsers() {
+        log.info("get list of user by " + Thread.currentThread().getName());
+        List<User> users = repository.findAll();
+        return CompletableFuture.completedFuture(users);
+    }
+
 }
