@@ -1,9 +1,15 @@
 package com.hendisantika.springbootmultithreading.service;
 
+import com.hendisantika.springbootmultithreading.entity.User;
 import com.hendisantika.springbootmultithreading.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,5 +28,16 @@ public class UserService {
     private UserRepository repository;
 
     private Object target;
+
+    @Async
+    public CompletableFuture<List<User>> saveUsers(MultipartFile file) throws Exception {
+        long start = System.currentTimeMillis();
+        List<User> users = parseCSVFile(file);
+        log.info("saving list of users of size {}", users.size(), "" + Thread.currentThread().getName());
+        users = repository.saveAll(users);
+        long end = System.currentTimeMillis();
+        log.info("Total time {}", (end - start));
+        return CompletableFuture.completedFuture(users);
+    }
 
 }
