@@ -5,3 +5,17 @@
 3. Run the application: `mvn clean spring-boot:run`
 4. Open your REST API Client. I am using POSTMAN
 5. Import Postman Collection
+
+
+### Images Screen shot
+Upload CSV Files
+
+![Upload CSV Files](img/upload.png "Upload CSV Files")
+
+List All Users
+
+![List All Users](img/all.png "List All Users")
+
+List All Users by Thread
+
+![List All Users by Thread](img/thread.png "List All Users by Thread")
